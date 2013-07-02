@@ -1,10 +1,10 @@
 var domains = {}
 
 function addDomain() {
-    hostname = document.getElementById("hostname").value
-    agent = document.getElementById("agent").value
+    hostname = document.getElementById("hostname")
+    agent = document.getElementById("agent")
     
-    domains[hostname] = agent
+    domains[hostname.value] = agent.value
     
     chrome.storage.sync.set({'domains': domains})
     
