@@ -15,3 +15,6 @@ to work instead.
 This is a very ugly workaround. In a perfect world it wouldn't be needed and
 Google wouldn't slow our computers down, but in the real world it could be
 an helpful thing.
+
+If you think (like me) that the HTML pages would need a nice CSS, please go
+ahead and do it, patches are welcome.
