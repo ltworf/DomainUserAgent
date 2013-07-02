@@ -18,3 +18,11 @@ an helpful thing.
 
 If you think (like me) that the HTML pages would need a nice CSS, please go
 ahead and do it, patches are welcome.
+
+License and stuff
+=================
+All the code is released under GPL3 or greater.
+
+The icon comes from Oxygen.
+
+The rest was written by Salvo 'LtWorf' Tomaselli <tiposchi@tiscali.it>
