@@ -1,6 +1,10 @@
 domains = {}
 
-
+/*
+ * This function reads the settings and
+ * updates the "domains" variable.
+ * It's asynchronous
+ **/
 function getSettings() {
     chrome.storage.sync.get('domains',                       
         function (result) {
@@ -17,6 +21,7 @@ var getHostname = function(href) {
 
 /* Main */
 
+/* Reloads the settings if they are changed */
 chrome.storage.onChanged.addListener(
     function(changes, namespace) {
         for (key in changes) {

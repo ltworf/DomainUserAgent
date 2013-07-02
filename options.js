@@ -1,11 +1,21 @@
+/*
+ * I use this thing as a dictionary
+ **/
 var domains = {}
 
+/*
+ * Deletes the item with the given key from the dictionary
+ * then reloads the table and stores the settings
+ **/
 function delItem(key) {
     delete domains[key]
     createTable()
     chrome.storage.sync.set({'domains': domains})
 }
 
+/**
+ * Creates the HTML table to put inside the options page
+ **/
 function createTable() {
     table = "<table>"
     
@@ -43,6 +53,7 @@ function createTable() {
     
     d = document.getElementById("tablediv");
     d.innerHTML = table;
+    
     
     
     for (i=0; i<k.length; i++) {
