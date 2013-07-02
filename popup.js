@@ -24,5 +24,7 @@ document.addEventListener('DOMContentLoaded',
 chrome.storage.sync.get('domains',                       
     function (result) {
         domains = result.domains
+        if (domains == undefined)
+            domains = {}
     }
 );
