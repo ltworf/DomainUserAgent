@@ -1,27 +1,45 @@
+domains = {}
+
+
+function getSettings() {
+    chrome.storage.sync.get('domains',                       
+        function (result) {
+            domains = result.domains
+        }
+    );
+}
+
+var getHostname = function(href) {
+    var l = document.createElement("a");
+    l.href = href;
+    return l.hostname;
+};
+
+/* Main */
+
+chrome.storage.onChanged.addListener(
+    function(changes, namespace) {
+        for (key in changes) {
+            if (key == "domains") {
+                getSettings()
+            }
+        }
+    }
+);
+
 
 
 /* Registers callback function */
 chrome.webRequest.onBeforeSendHeaders.addListener(
     function(details) {
-        
-        
-        //chrome.storage.sync.set({'value': theValue})
-        
-//         chrome.storage.local.get('enabled', function (result) {
-//         channels = result.channels;
-//         alert(result.channels);
-//         $("#channels").val(channels);
-//         });
-        
-        
-        //TODO if useragent needs to be changed for this domain
         hostname = getHostname(details.url)
         
+        if (domains[hostname] == undefined)
+            return;
         
-
         for (var i = 0; i < details.requestHeaders.length; i++) {
             if (details.requestHeaders[i].name === 'User-Agent') {
-                details.requestHeaders[i].value = "I hate js"
+                details.requestHeaders[i].value = domains[hostname]
                 break;
             }
         }
@@ -31,9 +49,4 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
     ["blocking", "requestHeaders"]
 );
 
-
-var getHostname = function(href) {
-    var l = document.createElement("a");
-    l.href = href;
-    return l.hostname;
-};
+getSettings()
