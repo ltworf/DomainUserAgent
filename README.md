@@ -1,7 +1,8 @@
 DomainUserAgent
 ===============
 
-This extension changes the user agent depending on the hostname.
+This Chromium/Google Chrome extension changes the user agent depending on the
+hostname.
 
 The idea behind the extension is to let the browser use a different user agent
 on a per-domain base.
