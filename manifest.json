@@ -2,7 +2,7 @@
     "manifest_version": 2,
 
     "name": "DomainUserAgent",
-    "description": "This extension changes the user agent depending on the hostname.",
+    "description": "This extension changes the UserAgent sent by your browser on a per-domain base. You can set up a different UserAgent for a specific domain, but still use the default one otherwise.",
     "version": "1.0",
     
     "background": {
