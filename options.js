@@ -30,7 +30,8 @@ function createTable() {
     
     k = Object.keys(domains)
     for (i=0; i<k.length; i++) {
-        table+="<tr>"
+        colour = i % 2 ? '#FFFFFF' : '#EAEAEA'
+        table+='<tr bgcolor="' + colour  + '">'
         
         table+="<td>"
         table+=k[i]
@@ -44,8 +45,6 @@ function createTable() {
         table+='<button id="btnremove'+ i + '">Remove</button>'
         table+="</td>"
         
-        
-        
         table+="</tr>"
     }
     
@@ -53,8 +52,6 @@ function createTable() {
     
     d = document.getElementById("tablediv");
     d.innerHTML = table;
-    
-    
     
     for (i=0; i<k.length; i++) {
         b = document.getElementById("btnremove"+i);
