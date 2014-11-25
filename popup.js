@@ -1,14 +1,37 @@
 var domains = {}
 
+function error(msg) {
+    errordiv = document.getElementById('errordiv');
+    errordiv.innerHTML = msg;
+}
+
 function addDomain() {
-    hostname = document.getElementById("hostname")
-    agent = document.getElementById("agent")
+    hostname_obj = document.getElementById("hostname")
+    agent_obj = document.getElementById("agent")
+
+    hostname = hostname_obj.value
+    agent = agent_obj.value
+
+    if (hostname == '') {
+        error('Empty hostname');
+        return;
+    }
+
+    proto_end = hostname.indexOf('://')
+    if (proto_end != -1)
+        hostname = hostname.substring(proto_end+3)
     
-    domains[hostname.value] = agent.value
-    
+    if (hostname.lastIndexOf('/') == hostname.length -1)
+        hostname = hostname.substring(0, hostname.length - 1);
+
+    if (hostname.indexOf('/') != -1) {
+        error('Invalid hostname');
+        return;
+    }
+
+    domains[hostname] = agent
     chrome.storage.sync.set({'domains': domains})
-    
-    hostname.value = ""
+    hostname_obj.value = ""
 }
 
 
