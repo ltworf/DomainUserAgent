@@ -1,9 +1,8 @@
 <html>
 
     <head>
-    
+        <link rel="stylesheet" type="text/css" href="style.css">
         <script src="popup.js"></script>
-
     </head>
 
     <body>
@@ -13,16 +12,16 @@
         <div>
             <table>
                 <tr>
-                    <td>
+                    <td class="nowrap">
                         Domain:
                     </td>
                     <td>
                         <input type="text" id="hostname" placeholder="www.example.com"/>
                     </td>
                 </tr>
-                
+
                 <tr>
-                    <td>
+                    <td class="nowrap">
                         User agent:
                     </td>
                     <td>
@@ -31,11 +30,11 @@
                 </tr>
             </table>
             <div id="errordiv" style="color: red;"></div>
-            <button id="btnAdd">Add</button>
+            <button class="myButton" id="btnAdd">Add</button>
         </div>
 
         <hr>
-        <button id="btnOptions">Show options</button>
+        <button class="myButton" id="btnOptions">Show options</button>
 
     </body>
 

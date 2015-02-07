@@ -30,7 +30,7 @@ function createTable() {
     
     k = Object.keys(domains)
     for (i=0; i<k.length; i++) {
-        colour = i % 2 ? '#FFFFFF' : '#EAEAEA'
+        colour = i % 2 ? '#151515' : '#2B2B2B'
         table+='<tr bgcolor="' + colour  + '">'
         
         table+="<td>"
@@ -42,7 +42,7 @@ function createTable() {
         table+="</td>"
         
         table+="<td>"
-        table+='<button id="btnremove'+ i + '">Remove</button>'
+        table+='<button class="thinButton" id="btnremove'+ i + '">Remove</button>'
         table+="</td>"
         
         table+="</tr>"
