@@ -1,5 +1,9 @@
 var domains = {}
 
+function options() {
+    chrome.tabs.create({'url': chrome.extension.getURL("options.html") } );
+}
+
 function error(msg) {
     errordiv = document.getElementById('errordiv');
     errordiv.innerHTML = msg;
@@ -41,6 +45,12 @@ function addDomain() {
 document.addEventListener('DOMContentLoaded',
     function () {
         document.getElementById("btnAdd").addEventListener("click", addDomain);  
+    }
+);
+
+document.addEventListener('DOMContentLoaded',
+    function() {
+        document.getElementById("btnOptions").addEventListener("click", options);
     }
 );
 
