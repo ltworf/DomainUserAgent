@@ -70,11 +70,8 @@ function createTable() {
     f = function() {
         hostname_obj = document.getElementById("hostname")
         agent_obj = document.getElementById("agent")
-
         hostname = hostname_obj.value
         agent = agent_obj.value
-
-        hostname_obj.value = ""
         addDomainToSettings(domains, hostname, agent)
         createTable()
     }
