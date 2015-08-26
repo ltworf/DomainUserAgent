@@ -20,7 +20,7 @@ table {
 td {
         padding: 1px;
         border-color:#cccccc;
-        border-style:solid; 
+        border-style:solid;
         border-width:1px;
 }
 
@@ -73,6 +73,7 @@ td.nowrap {
 
 
 .thinButton {
+    width: 100%;
     -moz-box-shadow: 0px 1px 0px 0px #1c1b18;
     -webkit-box-shadow: 0px 1px 0px 0px #1c1b18;
     box-shadow: 0px 1px 0px 0px #1c1b18;
